@@ -31,12 +31,13 @@ cron.schedule('*/5 * * * *', async () => {
   }
 });
 
-/** Mojang API */
-cron.schedule('0 2 * * *', async () => {
-  console.log('Running ServerList crawler schedule (at 2am each day)');
-  try {
-    await axios.post(`${serverListRoute}?password=${secretPassword}`);
-  } catch (error) {
-    console.error('ServerList crawl failed:', error);
-  }
-});
+/** ServerList API */
+/** Disabling for the meantime due massive amount of Row Reads */
+// cron.schedule('0 2 * * *', async () => {
+//   console.log('Running ServerList crawler schedule (at 2am each day)');
+//   try {
+//     await axios.post(`${serverListRoute}?password=${secretPassword}`);
+//   } catch (error) {
+//     console.error('ServerList crawl failed:', error);
+//   }
+// });
