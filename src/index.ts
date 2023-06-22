@@ -20,10 +20,11 @@ if (!secretPassword) {
 /**
  * === Node scheduler ===
  */
+console.info('⌛ Now running scheduler');
 
 /** Mojang API */
-cron.schedule('*/5 * * * *', async () => {
-  console.log('Running Mojang crawler schedule (every 5 mins)');
+cron.schedule('0 * * * *', async () => {
+  console.log('Running Mojang crawler schedule (every hour)');
   try {
     await axios.post(`${mojangRoute}?password=${secretPassword}`);
   } catch (error) {
