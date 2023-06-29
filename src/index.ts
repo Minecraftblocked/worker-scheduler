@@ -37,7 +37,7 @@ cron.schedule('*/5 * * * *', async () => {
 cron.schedule('*/15 * * * *', async () => {
   console.log('Running Mojang sweeper schedule (every 15 minutes)');
   try {
-    await axios.post(`${quickUpdateRoute}?password=${secretPassword}`);
+    await axios.post(`${sweeperRoute}?password=${secretPassword}`);
   } catch (error) {
     console.error('Mojang crawl failed:', error);
   }
@@ -46,7 +46,7 @@ cron.schedule('*/15 * * * *', async () => {
 cron.schedule('0 2 * * *', async () => {
   console.log('Running ServerList schedule (daily at 2am)');
   try {
-    await axios.post(`${sweeperRoute}?password=${secretPassword}`);
+    await axios.post(`${serverListRoute}?password=${secretPassword}`);
   } catch (error) {
     console.error('Mojang crawl failed:', error);
   }
