@@ -6,7 +6,7 @@ dotenv.config();
 
 // Retrieve routes for crawler
 const quickUpdateRoute = process.env.MOJANG_QUICKUPDATE_ROUTE;
-const sweeperRoute = process.env.MOJANG_QUICKUPDATE_ROUTE;
+const sweeperRoute = process.env.MOJANG_SWEEPER_ROUTE;
 const serverListRoute = process.env.CRAWL_SERVERLIST_ROUTE;
 
 if (!quickUpdateRoute || !serverListRoute || !sweeperRoute) {
